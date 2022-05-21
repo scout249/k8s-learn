@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: overmind
+spec:
+  replicas: 8
+  selector:
+    matchLabels:
+      app: overmind
+  template:
+    metadata:
+      labels:
+        app: overmind
+        tier: web
+    spec:
+      containers:
+        - env:
+            - name: OVERMIND_HTTP_ADDR
+              value: 0.0.0.0:8080
+          name: overmind
+          image: kevinjqiu/overmind:1
