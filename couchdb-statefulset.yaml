@@ -16,13 +16,13 @@ spec:
             terminationGracePeriodSeconds: 10
             containers:
                 - name: couchdb
-                  image: couchdb:1.6
+                  image: couchdb:3.2.2
                   ports:
                       - containerPort: 5984
                         name: http
                   volumeMounts:
                       - name: couchdb-data
-                        mountPath: /usr/local/var/lib/couchdb
+                        mountPath: /opt/couchdb/data
                   env:
                       - name: COUCHDB_USER
                         value: admin
