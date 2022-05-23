@@ -12,9 +12,7 @@ spec:
         app: whalesay
     spec:
       containers:
-        - command:
-            - cowsay
-            - This is a Kubernetes Job!
+        - command: ["cowsay"]
           image: docker/whalesay
           name: whalesay
   replicas: 2
