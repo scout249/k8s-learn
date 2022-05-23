@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: overmind
 spec:
-  replicas: 8
+  replicas: 3
   selector:
     matchLabels:
       app: overmind
@@ -14,9 +14,15 @@ spec:
         tier: web
     spec:
       containers:
-        - resources: {}
-          env:
+        - env:
             - name: OVERMIND_HTTP_ADDR
               value: 0.0.0.0:8080
+            - name: COUCHDB_USERNAME
+              value: admin
+            - name: COUCHDB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: couchdb-password
+                  key: password
           name: overmind
           image: kevinjqiu/overmind:1

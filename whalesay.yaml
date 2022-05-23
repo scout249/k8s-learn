@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: whalesay
+spec:
+  selector:
+    matchLabels:
+      app: whalesay
+  template:
+    metadata:
+      labels:
+        app: whalesay
+    spec:
+      containers:
+        - command:
+            - cowsay
+            - This is a Kubernetes Job!
+          image: docker/whalesay
+          name: whalesay
+  replicas: 2

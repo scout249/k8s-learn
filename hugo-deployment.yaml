@@ -15,8 +15,6 @@ spec:
         - ports:
             - name: web
               containerPort: 1313
-          command:
-            - hugo
           image: klakegg/hugo:0.93.2
           name: hugo
   replicas: 2
