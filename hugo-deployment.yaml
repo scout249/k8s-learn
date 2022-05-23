@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hugo
+spec:
+  selector:
+    matchLabels:
+      app: hugo
+  template:
+    metadata:
+      labels:
+        app: hugo
+    spec:
+      containers:
+        - ports:
+            - name: web
+              containerPort: 1313
+          command:
+            - hugo
+          image: klakegg/hugo:0.93.2
+          name: hugo
+  replicas: 2
