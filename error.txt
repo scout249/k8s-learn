@@ -68,3 +68,12 @@ Events:
   Normal  Pulled     7m47s  kubelet            Successfully pulled image "debian" in 10.62293976s
   Normal  Created    7m47s  kubelet            Created container command-demo-container
   Normal  Started    7m46s  kubelet            Started container command-demo-container
+  
+  
+kubectl get events
+LAST SEEN   TYPE      REASON              OBJECT                           MESSAGE
+10m         Normal    Scheduled           pod/command-demo                 Successfully assigned default/command-demo to minikube
+10m         Normal    Pulling             pod/command-demo                 Pulling image "debian"
+10m         Normal    Pulled              pod/command-demo                 Successfully pulled image "debian" in 10.62293976s
+10m         Normal    Created             pod/command-demo                 Created container command-demo-container
+10m         Normal    Started             pod/command-demo                 Started container command-demo-container
