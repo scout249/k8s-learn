@@ -1,0 +1,70 @@
+kubectl get po -o wide
+NAME                        READY   STATUS      RESTARTS   AGE     IP            NODE       NOMINATED NODE   READINESS GATES
+command-demo                0/1     Completed   0          7m41s   172.18.0.11   minikube   <none>           <none>
+couchdb-0                   1/1     Running     0          5h3m    172.18.0.3    minikube   <none>           <none>
+overmind-7cb94cb85f-d8246   1/1     Running     0          4h50m   172.18.0.5    minikube   <none>           <none>
+overmind-7cb94cb85f-ffn2s   1/1     Running     0          4h50m   172.18.0.4    minikube   <none>           <none>
+overmind-7cb94cb85f-tnm9b   1/1     Running     0          4h50m   172.18.0.6    minikube   <none>           <none>
+
+
+
+
+kubectl describe pod command-demo
+Name:         command-demo
+Namespace:    default
+Priority:     0
+Node:         minikube/172.17.192.201
+Start Time:   Mon, 23 May 2022 22:18:48 +0800
+Labels:       purpose=demonstrate-command
+Annotations:  <none>
+Status:       Succeeded
+IP:           172.18.0.11
+IPs:
+  IP:  172.18.0.11
+Containers:
+  command-demo-container:
+    Container ID:  docker://d86d7405db9c7947587dd901ec2267563299d185dcb6a5351cb1ae65bc2a528c
+    Image:         debian
+    Image ID:      docker-pullable://debian@sha256:6137c67e2009e881526386c42ba99b3657e4f92f546814a33d35b14e60579777
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      printenv
+    Args:
+      HOSTNAME
+      KUBERNETES_PORT
+    State:          Terminated
+      Reason:       Completed
+      Exit Code:    0
+      Started:      Mon, 23 May 2022 22:18:59 +0800
+      Finished:     Mon, 23 May 2022 22:18:59 +0800
+    Ready:          False
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-v5cwk (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             False
+  ContainersReady   False
+  PodScheduled      True
+Volumes:
+  kube-api-access-v5cwk:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  7m58s  default-scheduler  Successfully assigned default/command-demo to minikube
+  Normal  Pulling    7m57s  kubelet            Pulling image "debian"
+  Normal  Pulled     7m47s  kubelet            Successfully pulled image "debian" in 10.62293976s
+  Normal  Created    7m47s  kubelet            Created container command-demo-container
+  Normal  Started    7m46s  kubelet            Started container command-demo-container
