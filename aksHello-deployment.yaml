@@ -41,7 +41,7 @@ metadata:
     kubernetes.io/ingress.class: addon-http-application-routing
 spec:
   rules:
-  - host: 9addbffb39004d629c85.northcentralus.aksapp.io
+  - host: app1.9addbffb39004d629c85.northcentralus.aksapp.io
     http:
       paths:
       - path: /
