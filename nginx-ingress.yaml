@@ -15,4 +15,4 @@ spec:
           service: 
             name: nginx-hello
             port: 
-              number: 80
+              number: 30779
