@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-hello
+  labels:
+    app: nginx-hello
+spec:
+  selector:
+    matchLabels:
+      app: nginx-hello
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: nginx-hello
+    spec:
+      containers:
+        - name: nginx
+          image: nginxdemos/hello:0.2
