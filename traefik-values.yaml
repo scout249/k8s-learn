@@ -1,0 +1,13 @@
+additionalArguments:
+  - "--accesslog=true"
+  - "--accesslog.format=json"
+  - "--log.level=DEBUG"
+
+deployment:
+  replicas: 1
+
+service:
+  spec:
+    loadBalancerIP: <public IP>
+  annotations:
+    "service.beta.kubernetes.io/azure-load-balancer-resource-group": "kubernetes"
