@@ -31,23 +31,3 @@ spec:
   - port: 80
   selector:
     app: aks-helloworld
----
-# HTTP application routing doesn't currently work with AKS versions 1.22.6+
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: aks-helloworld
-  annotations:
-    kubernetes.io/ingress.class: addon-http-application-routing
-spec:
-  rules:
-  - host: app1.9addbffb39004d629c85.northcentralus.aksapp.io
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service: 
-            name: aks-helloworld
-            port: 
-              number: 80
