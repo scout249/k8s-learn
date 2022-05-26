@@ -40,3 +40,5 @@ az aks create \
 	--pod-cidr $POD_ADDRESS_SPACE \
 	--docker-bridge-address $DOCKER_BRIDGE_ADDRESS \
 	--vnet-subnet-id $SUBNET_ID \
+	--generate-ssh-keys \
+	--yes
