@@ -1,5 +1,6 @@
 # VARIABLES
-SUBSCRIPTION_ID=""
+#SUBSCRIPTION_ID=""
+#SUBSCRIPTION_ID=$(az account show --query id --output tsv)
 RESOURCE_GROUP="rg-aks-baseline"
 LOCATION="northcentralus"
 NODE_COUNT=2
