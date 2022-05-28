@@ -33,4 +33,4 @@ spec:
           name: mongoexpress
   selector:
     matchLabels:
-      app: mongoepress
+      app: mongoexpress
