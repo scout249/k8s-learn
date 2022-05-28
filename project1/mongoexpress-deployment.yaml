@@ -29,7 +29,7 @@ spec:
                 configMapKeyRef:
                   name: mongo-configmap
                   key: mongo-server
-          image: mongoexpress
+          image: mongo-express
           name: mongoexpress
   selector:
     matchLabels:
