@@ -27,8 +27,10 @@ spec:
                 configMapKeyRef:
                   name: mongo-configmap
                   key: mongo-server-url
+            - name: ME_CONFIG_MONGODB_ENABLE_ADMIN
+              value: "true"
           name: mongo-express
-          image: mongo-express
+          image: mongo-express:0.54.0
   selector:
     matchLabels:
       app: mongo-express
