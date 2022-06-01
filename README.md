@@ -6,4 +6,4 @@
 
 *   **ingress-aks-demo**: Set up Ingress on Azure Kubernetes Service (AKS) with the NGINX Ingress Controller.
 
-
+*   **aks-create-script**: Create Azure Kubernetes Service (AKS) Cluster using AZ AKS CLI
